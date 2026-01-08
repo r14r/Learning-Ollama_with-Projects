@@ -40,6 +40,9 @@ class AdvancedConversationManager:
     
     def save(self, filename):
         """Save conversation to file."""
+        import os
+        # Ensure directory exists
+        os.makedirs(os.path.dirname(filename) if os.path.dirname(filename) else '.', exist_ok=True)
         with open(filename, 'w') as f:
             json.dump({
                 'metadata': self.metadata,
@@ -67,9 +70,12 @@ def main():
     print("User: What number did I tell you?")
     print(f"Bot: {conv.chat('What number did I tell you?')}\n")
     
-    # Save conversation
-    conv.save('/tmp/conversation.json')
-    print("Conversation saved to /tmp/conversation.json")
+    # Save conversation to a cross-platform location
+    import tempfile
+    import os
+    save_path = os.path.join(tempfile.gettempdir(), 'conversation.json')
+    conv.save(save_path)
+    print(f"Conversation saved to {save_path}")
 
 if __name__ == "__main__":
     main()

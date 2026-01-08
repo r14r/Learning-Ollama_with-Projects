@@ -6,8 +6,8 @@ import asyncio
 async def async_generate(prompt, model="llama3"):
     """Asynchronously generate response."""
     try:
-        # Note: ollama library may not have native async, so we use run_in_executor
-        loop = asyncio.get_event_loop()
+        # Use run_in_executor for compatibility with ollama library
+        loop = asyncio.get_running_loop()
         response = await loop.run_in_executor(
             None,
             lambda: ollama.generate(model=model, prompt=prompt)

@@ -80,8 +80,10 @@ ollama>=0.1.0
 
 ## Prerequisites
 - Ollama must be installed and running
-- CodeLlama or similar code model recommended: `ollama pull codellama`
-- Alternative: Use llama3 or another model
+- At least one model must be pulled (e.g., `ollama pull llama3`)
+- CodeLlama or similar code model recommended for best results: `ollama pull codellama`
+  - If CodeLlama is not available, the scripts will work with llama3 as default
+- Alternative: Use llama3 or another model by changing the model parameter
 
 ## Usage
 ```bash

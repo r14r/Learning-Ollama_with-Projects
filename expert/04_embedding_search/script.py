@@ -19,6 +19,7 @@ class EmbeddingSearch:
                 embeddings.append(emb['embedding'])
             except Exception as e:
                 print(f"Error embedding document: {e}")
+                print(f"Note: Embeddings may not be supported by all models.")
                 embeddings.append([])
         return embeddings
     

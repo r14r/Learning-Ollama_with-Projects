@@ -7,14 +7,14 @@ An AI-powered code generation and assistance tool using Ollama.
 import ollama
 
 
-def generate_code(description, language="Python", model="codellama"):
+def generate_code(description, language="Python", model="llama3"):
     """
     Generate code based on a description.
     
     Args:
         description (str): Description of what the code should do
         language (str): Programming language
-        model (str): Model to use (codellama recommended)
+        model (str): Model to use (llama3 by default, codellama recommended if available)
     
     Returns:
         str: Generated code
@@ -28,7 +28,7 @@ def generate_code(description, language="Python", model="codellama"):
         return f"Error: {str(e)}"
 
 
-def explain_code(code, model="codellama"):
+def explain_code(code, model="llama3"):
     """
     Explain what a piece of code does.
     
@@ -51,7 +51,7 @@ def explain_code(code, model="codellama"):
         return f"Error: {str(e)}"
 
 
-def fix_code(code, error, model="codellama"):
+def fix_code(code, error, model="llama3"):
     """
     Fix code given an error message.
     
@@ -78,7 +78,7 @@ Provide the corrected code only."""
         return f"Error: {str(e)}"
 
 
-def review_code(code, model="codellama"):
+def review_code(code, model="llama3"):
     """
     Review code and suggest improvements.
     
