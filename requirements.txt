@@ -1,0 +1,14 @@
+# Ollama Python SDK
+ollama>=0.1.0
+
+# Optional dependencies for advanced projects
+# Uncomment as needed for specific projects
+
+# For async operations
+# aiohttp>=3.8.0
+
+# For embeddings and vector operations
+# numpy>=1.24.0
+
+# For JSON validation
+# jsonschema>=4.0.0
